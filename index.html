@@ -12,6 +12,30 @@
 <body>
     <div class="container">
         <header>Database over film directors</header>
+
+        <form id="addDirector">
+            <input id="name" type="text" placeholder="Name">
+            <input id="age" type="number" placeholder="Age">
+            <input id="livingStatus" type="text" placeholder="Living status">
+            <input id="directorialCredits" type="number" placeholder="Directorial credits">
+            <input id="numberOfAwards" type="number" placeholder="Amount of awards won">
+            <button>Add</button>
+        </form>
+    
+        <div id="filters">
+            <form id="filter-by-breed">
+                <input id="filter-breed" type="text" placeholder="Filter by breed">
+                <button>Filter</button>
+            </form>
+    
+            <form id="filter-by-age">
+                <input id="filter-age" type="number" placeholder="Filter by age">
+                <button>Filter</button>
+            </form>
+    
+            <button id="show-all" type="button">Show all</button>
+        </div>
+        
         <div class="info">
             <div></div>
             <div>Director.</div>
@@ -20,23 +44,7 @@
             <div>Directorial credits.</div>
             <div>Number of awards.</div>
         </div>
-
-        <div id="director">
-            <li><span>1.</span></li>
-            <div>Martin Scorsese.</div>
-            <div>79.</div>
-            <div>Alive.</div>
-            <div>68.</div>
-            <div>167.</div>
-        </div>
-        <div id="director">
-            <li><span>2.</span></li>
-            <div>Alfred Hitchcock.</div>
-            <div>80.</div>
-            <div>Dead.</div>
-            <div>69.</div>
-            <div>31.</div>
-        </div>
+        <div class="main"></div>
 
     </div>
     <script src="database.js"></script>

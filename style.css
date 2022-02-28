@@ -12,26 +12,27 @@ body {
     border-radius: 15px;
 }
 
-.container > :nth-child(even){
+.main > :nth-child(even){
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     background-color: pink;
     padding: 10px;
-    gap: 10px;
+    gap: 40px;
     border-radius: 10px;
     color: purple;
 }
 
-.container > :nth-child(2n+3){
+.main > :nth-child(odd){
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 10px;
     border-radius: 10px;
     color: whitesmoke;
-    gap: 10px;
+    gap: 40px;
 }
 
 header {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: x-large;
     font-weight: bolder;
     display: flex;
@@ -49,6 +50,11 @@ header {
     margin-top: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    background-color: pink;
+    padding: 10px;
+    gap: 40px;
+    border-radius: 10px;
+    color: purple;
 }
 
 .info > div {
@@ -69,4 +75,22 @@ li {
 #director > div {
     display: flex;
     align-items: center;
+}
+
+button {
+    align-self: center;
+    justify-self: flex-start;
+    height: 21px;
+}
+
+#filters {
+    display: flex;
+    margin-top: 10px;
+}
+
+#filter-by-age {
+    margin-left: 20px;
+}
+#show-all {
+    margin-left: 20px;
 }
