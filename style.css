@@ -56,7 +56,17 @@ header {
     align-items: center;
 }
 
+li {
+    align-self: center;
+}
+
 #director{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    
+}
+
+#director > div {
+    display: flex;
+    align-items: center;
 }
