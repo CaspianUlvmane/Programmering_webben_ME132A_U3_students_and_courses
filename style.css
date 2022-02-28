@@ -14,7 +14,7 @@ body {
 
 .container > :nth-child(even){
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     background-color: pink;
     padding: 10px;
     gap: 10px;
@@ -24,7 +24,7 @@ body {
 
 .container > :nth-child(2n+3){
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     padding: 10px;
     border-radius: 10px;
     color: whitesmoke;
@@ -44,7 +44,7 @@ header {
 
 .info {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     font-weight: bolder;
     margin-top: 15px;
     font-family: Arial, Helvetica, sans-serif;
