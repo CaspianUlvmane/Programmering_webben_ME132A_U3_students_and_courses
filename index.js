@@ -64,4 +64,9 @@ function directorSubmit (event){
   
   }
 
+  function setDirectorHandeler () {
+    let button = document.getElementById('add')
+    button.addEventListener('click', addDirectorClick)
+  }
+
 renderDirectors(database)
