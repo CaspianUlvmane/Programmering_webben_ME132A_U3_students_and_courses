@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 70vw;
+    width: 90vw;
     margin-top: 50px;
     background-color: purple;
     padding: 20px;
@@ -77,13 +77,13 @@ li{
     align-self: center;
 }
 
-#director{
+.director{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     
 }
 
-#director > div {
+.director > div {
     display: flex;
     align-items: center;
 }
