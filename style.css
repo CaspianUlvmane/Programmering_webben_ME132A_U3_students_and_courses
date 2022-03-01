@@ -12,6 +12,11 @@ body {
     border-radius: 15px;
 }
 
+.main{
+    margin: 0px;
+    width: 100%;
+}
+
 .main > :nth-child(even){
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -62,7 +67,13 @@ header {
     align-items: center;
 }
 
-li {
+ol {
+    position: relative;
+    left: -39px;
+}
+
+li{
+    justify-self: center;
     align-self: center;
 }
 

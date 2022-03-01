@@ -5,14 +5,14 @@ function renderDirector (director){
     let div = document.createElement("div")
     div.id = "director"
     div.innerHTML = `
-        <li><span>${director.id}.</span></li>
+        <li></li>
         <div>${director.name}.</div>
         <div>${director.age}.</div>
         <div>${director.livingStatus}.</div>
         <div>${director.directorialCredits}.</div>
         <div>${director.numberOfAwards}.</div>
         <button type="button">Remove</button>
-    `
+        `
     return div
 }
 

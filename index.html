@@ -23,13 +23,18 @@
         </form>
     
         <div id="filters">
-            <form id="filter-by-breed">
-                <input id="filter-breed" type="text" placeholder="Filter by breed">
+            <form id="ageFilter">
+                <input id="filter-age" type="number" placeholder="Filter by age">
                 <button>Filter</button>
             </form>
     
-            <form id="filter-by-age">
-                <input id="filter-age" type="number" placeholder="Filter by age">
+            <form id="statusFilter">
+                <input id="filter-status" type="text" placeholder="Filter by living status">
+                <button>Filter</button>
+            </form>
+
+            <form id="creditsFilter">
+                <input id="filter-credits" type="number" placeholder="Filter by credits">
                 <button>Filter</button>
             </form>
     
@@ -44,7 +49,7 @@
             <div>Directorial credits.</div>
             <div>Number of awards.</div>
         </div>
-        <div class="main"></div>
+        <ol type="1" class="main"></ol>
 
     </div>
     <script src="database.js"></script>
