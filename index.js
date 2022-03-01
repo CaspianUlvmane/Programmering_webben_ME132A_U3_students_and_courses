@@ -33,6 +33,7 @@ function directorToDatabase (array, director){
 //skapar ett objekt av en regissör
 function newDirector (name, age, status, credits, awards) {
     let director = {
+      id: database[database.length - 1].id + 1,
       name: name,
       age: age,
       livingStatus: status,
@@ -48,9 +49,9 @@ function directorSubmit (event){
   
     let name = document.getElementById("name").value
     let status = document.getElementById("livingStatus").value
-    let credits = number(document.getElementById("credits").value)
-    let numberOfAwards = number(document.getElementById("numberOfAwards").value)
-    let age = number(document.getElementById("age").value)
+    let credits = Number(document.getElementById("credits").value)
+    let numberOfAwards = Number(document.getElementById("numberOfAwards").value)
+    let age = Number(document.getElementById("age").value)
   
     let director = newDirector(name, age, status, credits, numberOfAwards)
   
@@ -66,7 +67,8 @@ function directorSubmit (event){
 
   function setDirectorHandeler () {
     let button = document.getElementById('add')
-    button.addEventListener('click', addDirectorClick)
+    button.addEventListener('click', directorSubmit)
   }
 
 renderDirectors(database)
+setDirectorHandeler()

@@ -99,9 +99,14 @@ button {
     margin-top: 10px;
 }
 
-#filter-by-age {
+#filter-credits {
     margin-left: 20px;
 }
+
+#filter-status {
+    margin-left: 20px;
+}
+
 #show-all {
     margin-left: 20px;
 }
