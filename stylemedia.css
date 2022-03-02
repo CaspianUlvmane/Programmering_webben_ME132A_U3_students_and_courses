@@ -1,0 +1,21 @@
+@media (max-width: 782px){
+    #filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #filters > form > input {
+        margin: 0px;
+    }
+    #filters > button {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 620px){
+    .main > :nth-child(2n+1){
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .main > :nth-child(even){
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
