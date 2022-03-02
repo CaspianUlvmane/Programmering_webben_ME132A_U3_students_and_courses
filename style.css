@@ -68,8 +68,7 @@ header {
 }
 
 ol {
-    position: relative;
-    left: -39px;
+    padding: 0px;
 }
 
 li{

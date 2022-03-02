@@ -99,7 +99,40 @@ function directorSubmit (event){
     renderDirectors(database)
   }
 
+  function getDirectorsByAge (array, age) {
+    let ageArray = []
+    for (let director of array) {
+      if (director.age == age) {
+        ageArray.push(director)
+      }
+    }
+    console.log(ageArray)
+    return ageArray
+  }
+
+  function filterByAge(event){
+    event.preventDefault()
+    let age = document.getElementById("filter-age").value
+    let directors = getDirectorsByAge(database, age)
+    renderDogs(directors)
+    document.getElementById("filter-age").value = ""
+  }
+  
+  function onShowAllClick(){
+    renderDirectors(database)
+  }
+  
+  function filterDirectorHandelers (){
+    //let breedFilter = document.getElementById("filter-by-breed")
+    let ageFilter = document.getElementById("filter-age")
+    let showAll = document.getElementById("show-all")
+  
+    //breedFilter.addEventListener("submit", onFilterByBreedSubmit)
+    ageFilter.addEventListener("submit", filterByAge)
+    showAll.addEventListener("click", onShowAllClick)
+  }
 
 
 renderDirectors(database)
 setDirectorHandeler()
+filterDirectorHandelers()
