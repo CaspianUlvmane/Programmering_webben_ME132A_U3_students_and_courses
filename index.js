@@ -1,5 +1,7 @@
 "use strict"
 
+//länk till repository: https://github.com/CaspianUlvmane/Programmering_webben_ME132A_U2
+
 //skapar en regissör som ett HTML-element 
 function renderDirector (director){
     let div = document.createElement("div")
