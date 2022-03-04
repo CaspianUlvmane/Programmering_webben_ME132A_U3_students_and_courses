@@ -44,7 +44,7 @@ function directorToDatabase (array, director){
 //skapar ett objekt av en regissör
 function newDirector (name, age, status, credits, awards) {
     let director = {
-      id: database[database.length - 1].id + 1,
+      id: idMaker(),
       name: name,
       age: age,
       livingStatus: status,
@@ -94,8 +94,6 @@ function directorSubmit (event){
     }
     
     let director = newDirector(nameJoin, age, statuscapital, credits, numberOfAwards)
-    
-    director.id = database[database.length - 1].id + 1;
   
     directorToDatabase(database, director)
     renderDirectors(database)
@@ -103,6 +101,18 @@ function directorSubmit (event){
     let form = document.getElementById("addDirector")
     form.reset()
   
+  }
+
+  //skapar ett id som sätts på nytt objekt
+  function idMaker(){
+    if (database.length = database.length) {
+      let id = database[database.length - 1].id + 1; 
+      return id;
+  } 
+  else {
+    let id = 1; 
+    return id;
+  }
   }
 
   //funktionen sätter en eventlistener på knappen add
