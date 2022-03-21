@@ -50,6 +50,27 @@ header {
     grid-template-columns: 1fr 1fr;
 }
 
-#course {
-    display: flex;
+#courses {
+display: flex;
+}
+
+h4 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+#courses > div {
+    background-color: ghostwhite;
+    padding: 10px;
+    border-radius: 6px;
+    border: solid yellow 2px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#courses > .done {
+    background-color: lightgreen;
 }
