@@ -40,16 +40,16 @@ function renderStudents (students){
 }
 
 function renderCourses (student){
-    let div = document.createElement("div")
     let courseData = DATABASE.courses
     let courses = []
-    console.log(student.courses)
     for ( let course of student.courses){
-        if (courseData.courseID == course.courseID)
+        if (course.courseID == courseData.courseID)
         courses.push(courseData)
     }
-    console.log(courseData)
-    // div.innerHTML =
-    // <h4></h4>
-    // <p> ( 0f  credits)</p>
+    for (let course of courses){
+        let div = document.createElement("div")
+        div.innerHTML =
+        <h4>${course.title}</h4>
+        <p> ( 0f  credits)</p>
+    }
 }
