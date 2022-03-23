@@ -32,7 +32,7 @@ function completeCredits (student){
 }
 
 function renderStudents (students){
-    let studentsElement =     document.getElementById("wrapper")
+    let studentsElement = document.getElementById("wrapper")
     for ( let student of students){
         let studentElement = renderStudent(student.studentID)
         studentsElement.appendChild(studentElement)

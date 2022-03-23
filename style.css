@@ -51,7 +51,10 @@ header {
 }
 
 #courses {
-display: flex;
+display: inline-flex;
+margin-left: 20px;
+margin-right: 20px;
+flex-wrap: wrap;
 }
 
 h4 {
@@ -69,6 +72,7 @@ p {
     border: solid yellow 2px;
     margin-right: 5px;
     margin-bottom: 5px;
+    flex-shrink: 1;
 }
 
 #courses > .done {
