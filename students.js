@@ -6,11 +6,11 @@ function renderStudent(id){
     div.id = "container"
     div.innerHTML =
     `<header>${student.firstName} ${student.lastName} (total: ${completeCredits(student)} credits)</header>
-    <div id="head_wrap">
+    <div>
         <div id="course">
             <h3>Courses:</h3>
             <div id="courses">
-
+                ${renderCourses(student)}
             </div>
         </div>
     </div>`
@@ -39,6 +39,7 @@ function renderStudents (students){
     }
 }
 
+//creates the div elements for any student
 function renderCourses (student){
     let courseData = DATABASE.courses
     let courses = []
@@ -46,10 +47,16 @@ function renderCourses (student){
         if (course.courseID == courseData.courseID)
         courses.push(courseData)
     }
+    let courseDiv = []
     for (let course of courses){
         let div = document.createElement("div")
         div.innerHTML =
-        <h4>${course.title}</h4>
-        <p> ( 0f  credits)</p>
+        `<h4>${course.title}</h4>
+        <p> ( 0f  credits)</p>`
+        courseDiv.push(div)
+    }
+    for (let i = 0; i < courseDiv.length; i++){
+        let div = courseDiv[i]
+        div.
     }
 }
