@@ -1,5 +1,7 @@
 let allStudents = DATABASE.students
 
+let student = [DATABASE.students[0], DATABASE.students[1]]
+
 function renderStudent(id){
     let div = document.createElement("div")
     let student = DATABASE.students[id]
@@ -32,8 +34,6 @@ function completeCredits (student){
 function renderStudents (students){
     let studentsElement =     document.getElementById("wrapper")
     for ( let student of students){
-        console.log(student.studentID)
-        console.log(renderStudent(student.studentID))
         let studentElement = renderStudent(student.studentID)
         studentsElement.appendChild(studentElement)
     }
@@ -43,20 +43,27 @@ function renderStudents (students){
 function renderCourses (student){
     let courseData = DATABASE.courses
     let courses = []
-    for ( let course of student.courses){
-        if (course.courseID == courseData.courseID)
-        courses.push(courseData)
+    for ( let i = 0; i < student.courses.length; i++){
+        let id = student.courses[i].courseId
+        courses.push(courseData[id])
+        
     }
+    console.log(courses)
     let courseDiv = []
-    for (let course of courses){
+    for (let i= 0; i < courses.length; i++){
         let div = document.createElement("div")
-        div.innerHTML =
-        `<h4>${course.title}</h4>
-        <p> ( 0f  credits)</p>`
-        courseDiv.push(div)
+        console.log(student.courses[i].passedCredits)
+        console.log(courseData[courses[i].courseId].totalCredits)
+        if (student.courses[i].passedCredits == courseData[courses[i].courseId].totalCredits){
+            let text = div.innerHTML =
+            `<div class="done"><h4>${courses[i].title}</h4>
+            <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
+            courseDiv.push(text)} else{
+                let text = div.innerHTML =
+                `<div><h4>${courses[i].title}</h4>
+                <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
+                courseDiv.push(text)}
+
     }
-    for (let i = 0; i < courseDiv.length; i++){
-        let div = courseDiv[i]
-        div.
-    }
+    return courseDiv.toString().split(",").join(" ");
 }
