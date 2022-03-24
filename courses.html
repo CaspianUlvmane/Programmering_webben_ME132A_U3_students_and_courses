@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="siteWrapper">
+            <div id="form_contain">
+            <form> Search by course!
+                <input type="text" id="title">
+            </form>
+            </div>
+            <div id="wrapper">
+                <header></header>
+                <div id="container">
+                    <div id="course">
+                        <div id="faculty">
+                            <div id="responsible"><h3>Course responsible:</h3></div> <div id="teachers"><h3>Teachers:</h3></div>
+                        </div>
+                        <div id="students">
+                            <h3>Students:</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="database.js"></script>
+        <script src="courses.js"></script>
+        <script src="filtercourses.js"></script>
+    </body>
 </html>
