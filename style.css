@@ -1,9 +1,11 @@
 :root{
     --WBG: teal;
     --DS: rgb(0, 97, 97);
-    --WBC: goldenrod;
+    --WBC: rgb(255, 255, 255);
     --BG: gainsboro;
     --BC: gold;
+    --CBG: ghostwhite;
+    --CBC: yellow;
 }
 
 body{
@@ -66,10 +68,10 @@ p {
 }
 
 #courses > div {
-    background-color: ghostwhite;
+    background-color: var(--CBG);
     padding: 10px;
     border-radius: 6px;
-    border: solid yellow 2px;
+    border: solid var(--CBC) 2px;
     margin-right: 5px;
     margin-bottom: 5px;
     flex-shrink: 1;

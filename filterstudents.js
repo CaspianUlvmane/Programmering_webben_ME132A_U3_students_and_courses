@@ -4,7 +4,6 @@ function studentLastname (){
         document.querySelector("#wrapper").innerHTML = ""
         if ("" == searchWord()){
             document.querySelector("#wrapper").innerHTML = ""
-            console.log(i)
         } else if (allStudents[i].lastName.toLocaleLowerCase().includes(searchWord())) {
             studentsArray.push(allStudents[i]);
         } 
