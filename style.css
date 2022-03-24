@@ -11,7 +11,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#wrapper {
+#siteWrapper {
     margin: 26px;
     padding: 25px;
     border: solid var(--WBC) 5px;
