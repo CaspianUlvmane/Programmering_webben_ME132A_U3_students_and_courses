@@ -2,13 +2,12 @@ function studentLastname (){
     let studentsArray = []
     for ( let i = 0; i < allStudents.length; i++){
         document.querySelector("#wrapper").innerHTML = ""
-        console.log(allStudents[i].lastName)
-        console.log(searchWord)
-        if (allStudents[i].lastName.toLocaleLowerCase().includes(searchWord())) {
-            studentsArray.push(allStudents[i]);
-        } if (searchWord() == ""){
+        if ("" == searchWord()){
             document.querySelector("#wrapper").innerHTML = ""
-        }
+            console.log(i)
+        } else if (allStudents[i].lastName.toLocaleLowerCase().includes(searchWord())) {
+            studentsArray.push(allStudents[i]);
+        } 
 
     }
     renderStudents(studentsArray)
