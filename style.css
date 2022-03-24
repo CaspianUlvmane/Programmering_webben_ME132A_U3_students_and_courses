@@ -1,7 +1,7 @@
 :root{
     --WBG: teal;
     --DS: rgb(0, 97, 97);
-    --WBC: rgb(255, 255, 255);
+    --WBC: goldenrod;
     --BG: gainsboro;
     --BC: gold;
     --CBG: ghostwhite;
@@ -68,6 +68,21 @@ p {
 }
 
 #courses > div {
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 1;
+}
+
+#faculty {
+    display: flex;
+    flex-shrink: 1;
+}
+
+#faculty > div {
     background-color: var(--CBG);
     padding: 10px;
     border-radius: 6px;
