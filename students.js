@@ -58,13 +58,13 @@ function renderCourses (student){
 
             let text = div.innerHTML =
             `<div class="done"><h4>${courses[i].title}</h4>
-            <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
+            <p>${student.courses[i].started.semester} ${student.courses[i].started.year} (${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
             courseDiv.push(text)}
             
         else{
             let text = div.innerHTML =
             `<div><h4>${courses[i].title}</h4>
-            <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
+            <p>${student.courses[i].started.semester} ${student.courses[i].started.year} (${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
             courseDiv.push(text)}
 
     }
