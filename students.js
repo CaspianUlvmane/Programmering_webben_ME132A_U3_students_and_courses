@@ -51,18 +51,21 @@ function renderCourses (student){
     console.log(courses)
     let courseDiv = []
     for (let i= 0; i < courses.length; i++){
+
         let div = document.createElement("div")
-        console.log(student.courses[i].passedCredits)
-        console.log(courseData[courses[i].courseId].totalCredits)
+
         if (student.courses[i].passedCredits == courseData[courses[i].courseId].totalCredits){
+
             let text = div.innerHTML =
             `<div class="done"><h4>${courses[i].title}</h4>
             <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
-            courseDiv.push(text)} else{
-                let text = div.innerHTML =
-                `<div><h4>${courses[i].title}</h4>
-                <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
-                courseDiv.push(text)}
+            courseDiv.push(text)}
+            
+        else{
+            let text = div.innerHTML =
+            `<div><h4>${courses[i].title}</h4>
+            <p>(${student.courses[i].passedCredits} 0f ${courseData[courses[i].courseId].totalCredits} credits)</p></div>`
+            courseDiv.push(text)}
 
     }
     return courseDiv.toString().split(",").join(" ");
