@@ -6,6 +6,7 @@
     --BC: gold;
     --CBG: ghostwhite;
     --CBC: yellow;
+    --CRBG: salmon;
 }
 
 body{
@@ -63,6 +64,12 @@ h4 {
     margin: 0px;
 }
 
+h5{
+    margin: 5px;
+    margin-left: 0px;
+    font-weight: lighter;
+}
+
 p {
     margin: 0px;
 }
@@ -82,16 +89,53 @@ p {
     flex-shrink: 1;
 }
 
-#faculty > div {
+
+#responsible {
+    margin-right: 20px;
+}
+
+#responsible > p {
+    margin-left: 20px;
+    background-color: var(--CRBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--WBG) 2px;
+}
+
+#teachers > div {
+    display: flex;
+    flex-shrink: 1;
+}
+
+#teachers > div > :nth-child(1) {
+    margin-left: 20px;
+}
+
+#teachers > div > p {
+    margin-left: 5px;
     background-color: var(--CBG);
     padding: 10px;
     border-radius: 6px;
     border: solid var(--CBC) 2px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+}
+
+#students {
+    display: flex;
     flex-shrink: 1;
 }
 
+#students > div {
+    margin-left: 5px;
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+}
+
 #courses > .done {
+    background-color: lightgreen;
+}
+
+#students > .done {
     background-color: lightgreen;
 }
