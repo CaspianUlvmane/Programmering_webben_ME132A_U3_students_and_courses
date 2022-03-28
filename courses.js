@@ -28,8 +28,15 @@ function renderCourse(id){
     </div>
     </div>
     `
-    document.querySelector("#wrapper").appendChild(div)
     return div
+}
+
+function renderAllCourses(courses){
+    let coursesElement = document.getElementById("course")
+    for ( let course of courses){
+        let courseElement = renderCourse(course.courseId)
+        coursesElement.appendChild(courseElement)
+    }
 }
 
 function courseTitle (id){
@@ -66,43 +73,49 @@ function allCourseTeachers(id){
 
 function allCourseStudents (id){
     let courseId = DATABASE.courses[id].courseId
-    let students = []
-    for (let student of allStudents){
-        for (let courses of student.courses){
-            console.log(courses.courseId, courseId)
-                if (courses.courseId == courseId){
-                    students.push(student)
-                }
-        }
-    }
+    let students = allStudents.filter((student) => student.courses.some((course) => course.courseId == courseId))
+    // for (let student of allStudents){
+    //     for (let courses of student.courses){
+    //             if (courses.courseId == courseId){
+    //                 students.push(student)
+    //             }
+    //     }
+    // }
 //.map((student) => student.firstName + " " + student.lastName + " " + `(${student.courses[i].passedCredits})`)
+    let studentCourses = students.map((student) => student.courses)
     let studentsDiv = []
-    for (let student of students){
-        if (passedCredits(courseId, student)[0] == DATABASE.courses[id].totalCredits){
-        let div = document.createElement("div")
-        let content = div.innerHTML = `<div class="done">
-        <p>${student.firstName} ${student.lastName} (${passedCredits(courseId, student)} credits)</p>
-        <h5>${courseStarted(courseId, student)}</h5>
-        </div>`
-        studentsDiv.push(content)
-        } else{
-            let div = document.createElement("div")
-            let content = div.innerHTML = `<div>
-            <p>${student.firstName} ${student.lastName} (${passedCredits(courseId, student)} credits)</p>
-            <h5>${courseStarted(courseId, student)}</h5>
-            </div>`
-            studentsDiv.push(content)
+        for (let student of students){
+            let courseById = student.courses.filter((course) => course.courseId == courseId)
+            console.log(courseById)
+            for (let i = 0; i < courseById.length; i++){
+                console.log(courseById[i])
+                if (passedCredits(courseById[i], student)[0] == DATABASE.courses[id].totalCredits){
+                    let div = document.createElement("div")
+                    let content = div.innerHTML = `<div class="done">
+                    <p>${student.firstName} ${student.lastName} (${passedCredits(courseById[i], student)[i]} credits)</p>
+                    <h5>${courseStarted(courseById[i], student)[i]}</h5>
+                    </div>`
+                    studentsDiv.push(content)
+                } else{
+                    let div = document.createElement("div")
+                    let content = div.innerHTML = `<div>
+                    <p>${student.firstName} ${student.lastName} (${passedCredits(courseById[i], student)[i]} credits)</p>
+                    <h5>${courseStarted(courseById[i], student)[i]}</h5>
+                    </div>`
+                    studentsDiv.push(content)
+                }
+            }
         }
-    }
     return studentsDiv.toString().split(",").join(" ");
 }
 
-function passedCredits (id, student){
-    let passedCredit = student.courses.filter((course) => course.courseId == id).map((course) => course.passedCredits)
+function passedCredits (takenCourse, student){
+    let passedCredit = student.courses.filter((course) => course.courseId == takenCourse.courseId).map((course) => course.passedCredits)
+    console.log(passedCredit)
     return passedCredit
 }
 
-function courseStarted (id, student){
-    let courseStart = student.courses.filter((course) => course.courseId == id).map((course) => `${course.started.semester} ${course.started.year}`)
+function courseStarted (takenCourse, student){
+    let courseStart = student.courses.filter((course) => course.courseId == takenCourse.courseId).map((course) => `${course.started.semester} ${course.started.year}`)
     return courseStart
 }

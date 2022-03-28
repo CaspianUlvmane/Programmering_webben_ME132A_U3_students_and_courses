@@ -127,6 +127,7 @@ p {
 #students > div {
     flex-shrink: 1;
     margin-left: 5px;
+    margin-bottom: 5px;
     background-color: var(--CBG);
     padding: 10px;
     border-radius: 6px;
