@@ -1,29 +1,20 @@
-function filter (){
+function filterCourses (){
     let resultArray = []
-    for ( let i = 0; i < allStudents.length; i++){
-        document.querySelector("#wrapper").innerHTML = ""
-        if ("" == searchWord()){
-            document.querySelector("#wrapper").innerHTML = ""
-        } else if (allStudents[i].lastName.toLocaleLowerCase().includes(searchWord())) {
-            resultArray.push(allStudents[i]);
-        } 
-
-    }
     for ( let i = 0; i < allCourses.length; i++){
-        document.querySelector("#course").innerHTML = ""
+        document.getElementById("course").innerHTML = ""
         if ("" == searchWord()){
-            document.querySelector("#course").innerHTML = ""
-        } else if (allStudents[i].lastName.toLocaleLowerCase().includes(searchWord())) {
+            document.getElementById("course").innerHTML = ""
+        } else if (allCourses[i].title.toLocaleLowerCase().includes(searchWord())) {
             resultArray.push(allCourses[i]);
         } 
     }
-    renderStudents(resultArray)
     renderAllCourses(resultArray)
 }
 
 function searchWord (){
-    let search = document.getElementById("result")
+    let search = document.getElementById("results")
     return search.value.toLocaleLowerCase()
 }
 
-document.getElementById("result").addEventListener("keyup", filter)
+document.getElementById("results").addEventListener("keyup", filterCourses)
+

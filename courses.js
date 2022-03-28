@@ -74,21 +74,10 @@ function allCourseTeachers(id){
 function allCourseStudents (id){
     let courseId = DATABASE.courses[id].courseId
     let students = allStudents.filter((student) => student.courses.some((course) => course.courseId == courseId))
-    // for (let student of allStudents){
-    //     for (let courses of student.courses){
-    //             if (courses.courseId == courseId){
-    //                 students.push(student)
-    //             }
-    //     }
-    // }
-//.map((student) => student.firstName + " " + student.lastName + " " + `(${student.courses[i].passedCredits})`)
-    let studentCourses = students.map((student) => student.courses)
     let studentsDiv = []
         for (let student of students){
             let courseById = student.courses.filter((course) => course.courseId == courseId)
-            console.log(courseById)
             for (let i = 0; i < courseById.length; i++){
-                console.log(courseById[i])
                 if (passedCredits(courseById[i], student)[0] == DATABASE.courses[id].totalCredits){
                     let div = document.createElement("div")
                     let content = div.innerHTML = `<div class="done">
@@ -111,7 +100,6 @@ function allCourseStudents (id){
 
 function passedCredits (takenCourse, student){
     let passedCredit = student.courses.filter((course) => course.courseId == takenCourse.courseId).map((course) => course.passedCredits)
-    console.log(passedCredit)
     return passedCredit
 }
 
