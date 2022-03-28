@@ -65,16 +65,44 @@ function allCourseTeachers(id){
 }
 
 function allCourseStudents (id){
-    let courseId = DATABASE.courses[id]
+    let courseId = DATABASE.courses[id].courseId
     let students = []
     for (let student of allStudents){
         for (let courses of student.courses){
-            for (let i = 0; i < courses.length; i++){
-                if (courses[i].id == courseId){
-                    students.push(student.map((student) => student.firstName + " " + student.lastName + " " + `(${student.courses[i].passedCredits})`))
+            console.log(courses.courseId, courseId)
+                if (courses.courseId == courseId){
+                    students.push(student)
                 }
-            }
         }
     }
-    return students.toString().split(",").join(" ");
+//.map((student) => student.firstName + " " + student.lastName + " " + `(${student.courses[i].passedCredits})`)
+    let studentsDiv = []
+    for (let student of students){
+        if (passedCredits(courseId, student)[0] == DATABASE.courses[id].totalCredits){
+        let div = document.createElement("div")
+        let content = div.innerHTML = `<div class="done">
+        <p>${student.firstName} ${student.lastName} (${passedCredits(courseId, student)} credits)</p>
+        <h5>${courseStarted(courseId, student)}</h5>
+        </div>`
+        studentsDiv.push(content)
+        } else{
+            let div = document.createElement("div")
+            let content = div.innerHTML = `<div>
+            <p>${student.firstName} ${student.lastName} (${passedCredits(courseId, student)} credits)</p>
+            <h5>${courseStarted(courseId, student)}</h5>
+            </div>`
+            studentsDiv.push(content)
+        }
+    }
+    return studentsDiv.toString().split(",").join(" ");
+}
+
+function passedCredits (id, student){
+    let passedCredit = student.courses.filter((course) => course.courseId == id).map((course) => course.passedCredits)
+    return passedCredit
+}
+
+function courseStarted (id, student){
+    let courseStart = student.courses.filter((course) => course.courseId == id).map((course) => `${course.started.semester} ${course.started.year}`)
+    return courseStart
 }

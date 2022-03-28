@@ -121,10 +121,11 @@ p {
 
 #students {
     display: flex;
-    flex-shrink: 1;
+    flex-wrap: wrap;
 }
 
 #students > div {
+    flex-shrink: 1;
     margin-left: 5px;
     background-color: var(--CBG);
     padding: 10px;
