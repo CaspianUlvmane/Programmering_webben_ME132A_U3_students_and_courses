@@ -78,7 +78,7 @@ function allCourseStudents (id){
         for (let student of students){
             let courseById = student.courses.filter((course) => course.courseId == courseId)
             for (let i = 0; i < courseById.length; i++){
-                if (passedCredits(courseById[i], student)[0] == DATABASE.courses[id].totalCredits){
+                if (passedCredits(courseById[i], student)[i] == DATABASE.courses[id].totalCredits){
                     let div = document.createElement("div")
                     let content = div.innerHTML = `<div class="done">
                     <p>${student.firstName} ${student.lastName} (${passedCredits(courseById[i], student)[i]} credits)</p>
