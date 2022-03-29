@@ -1,17 +1,50 @@
 :root{
-    --WBG: teal;
+    /* --WBG: teal;
     --DS: rgb(0, 97, 97);
     --WBC: goldenrod;
     --BG: gainsboro;
     --BC: gold;
     --CBG: ghostwhite;
     --CBC: yellow;
-    --CRBG: salmon;
+    --CRBG: salmon; */
+    --WBG: rgb(23, 25, 29);
+    --DS: rgb(11, 17, 17);
+    --WBC: rgb(53, 55, 58);
+    --BG: gray;
+    --BC: darkgray;
+    --CBG: dimgrey;
+    --CBC: darkgray;
+    --CRBG: indianred;
+    --TC: white;
+    --DC: darkolivegreen;
+    --MC: rgb(23, 25, 29);
 }
 
 body{
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--CBG);
+    color: var(--TC);
+}
+
+#styling{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    position: absolute;
+    left: 400px;
+    top: 40px;
+}
+
+#moon{
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+    background-color: var(--MC);
+    position: absolute;
+    left: 23px;
+    top: -2px;
 }
 
 #siteWrapper {
@@ -135,9 +168,9 @@ p {
 }
 
 #courses > .done {
-    background-color: lightgreen;
+    background-color: var(--DC);
 }
 
 #students > .done {
-    background-color: lightgreen;
+    background-color: var(--DC);
 }
