@@ -1,0 +1,13 @@
+:root {
+    --WBG: rgb(23, 25, 29);
+    --DS: rgb(11, 17, 17);
+    --WBC: rgb(53, 55, 58);
+    --BG: gray;
+    --BC: darkgray;
+    --CBG: dimgrey;
+    --CBC: darkgray;
+    --CRBG: indianred;
+    --TC: white;
+    --DC: darkolivegreen;
+    --MC: rgb(23, 25, 29);
+}
