@@ -11,3 +11,170 @@
     --DC: darkolivegreen;
     --MC: rgb(23, 25, 29);
 }
+
+
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition-property: all;
+    transition-duration: 200ms;
+    background-color: var(--CBG);
+    color: var(--TC);
+}
+
+#styling{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+#styling:hover {
+    cursor: pointer;
+}
+
+#moon{
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+    background-color: var(--MC);
+    position: absolute;
+    left: 23px;
+    top: -2px;
+}
+
+#siteWrapper {
+    margin: 26px;
+    padding: 25px;
+    border: solid var(--WBC) 5px;
+    border-radius: 30px;
+    background-color: var(--WBG);
+}
+
+#form_contain {
+    display: flex;
+    filter: drop-shadow(5px 5px 3px var(--DS));
+}
+
+#course > :nth-child(1){
+    margin-top: 25px;
+}
+
+form {
+    background-color: var(--BG);
+    padding: 6px;
+    border-radius: 6px;
+    border: solid var(--BC) 2px;
+    font-size: larger;
+}
+
+#container {
+    margin-top: 15px;
+    padding: 6px;
+    border-radius: 6px;
+    border: solid var(--BC) 2px;
+    background-color: var(--BG);
+    filter: drop-shadow(5px 5px 3px var(--DS));
+}
+
+header {
+    font-size: x-large;
+    font-weight: bold;
+}
+#head_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#courses {
+display: inline-flex;
+margin-left: 20px;
+margin-right: 20px;
+flex-wrap: wrap;
+}
+
+h4 {
+    margin: 0px;
+}
+
+h5{
+    margin: 5px;
+    margin-left: 0px;
+    font-weight: lighter;
+}
+
+p {
+    margin: 0px;
+}
+
+#courses > div {
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 1;
+}
+
+#faculty {
+    display: flex;
+    flex-shrink: 1;
+}
+
+
+#responsible {
+    margin-right: 20px;
+}
+
+#responsible > p {
+    margin-left: 20px;
+    background-color: var(--CRBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--WBG) 2px;
+}
+
+#teachers > div {
+    display: flex;
+    flex-shrink: 1;
+}
+
+#teachers > div > :nth-child(1) {
+    margin-left: 20px;
+}
+
+#teachers > div > p {
+    margin-left: 5px;
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+}
+
+#students {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#students > div {
+    flex-shrink: 1;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+}
+
+#courses > .done {
+    background-color: var(--DC);
+}
+
+#students > .done {
+    background-color: var(--DC);
+}

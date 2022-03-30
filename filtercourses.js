@@ -28,25 +28,24 @@ function searchWord (){
 document.getElementById("results").addEventListener("keyup", filterCourses)
 
 function toggle(){
-    let darkmode = document.querySelector("#dark")
-    if (darkmode.href = 'dark.css'){
-    darkmode.href = ''
-    localStorage.setItem("theme",  '')
-    return
-    } 
-    if (darkmode.href == ''){
-       darkmode.href = 'dark.css'
+    let darkmode = document.querySelector("#siteWrapper")
+
+    if (window.getComputedStyle(darkmode).backgroundColor == "rgb(0, 128, 128)"){
+        darkmode.href = "dark.css"
         localStorage.setItem("theme", 'dark.css')
-        return
     }
+    if (window.getComputedStyle(darkmode).backgroundColor == "rgb(23, 25, 29)"){
+    darkmode.href = 'style.css'
+    localStorage.setItem("theme",  'style.css')
+    } 
 
 }
 
 document.getElementById("styling").addEventListener("click", toggle)
 
 function setTheme(){
-    let darkmode = document.querySelector("#dark")
-let Theme = localStorage.getItem("theme")
+    let darkmode = document.querySelector("#style")
+    let Theme = localStorage.getItem("theme")
     darkmode.href == Theme
 }
 
