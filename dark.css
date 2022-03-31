@@ -1,6 +1,6 @@
 :root {
     --WBG: rgb(23, 25, 29);
-    --DS: rgb(11, 17, 17);
+    --DS: rgb(8, 12, 12);
     --WBC: rgb(53, 55, 58);
     --BG: gray;
     --BC: darkgray;
@@ -9,7 +9,7 @@
     --CRBG: indianred;
     --TC: white;
     --DC: darkolivegreen;
-    --MC: rgb(23, 25, 29);
+    --MC: rgba(23, 25, 29, 1);
 }
 
 
@@ -43,6 +43,8 @@ body{
     height: 55px;
     background-color: var(--MC);
     position: absolute;
+    transition-property: left;
+    transition-duration: 250ms;
     left: 23px;
     top: -2px;
 }
@@ -60,16 +62,16 @@ body{
     filter: drop-shadow(5px 5px 3px var(--DS));
 }
 
-#course > :nth-child(1){
-    margin-top: 25px;
-}
-
 form {
     background-color: var(--BG);
     padding: 6px;
     border-radius: 6px;
     border: solid var(--BC) 2px;
     font-size: larger;
+}
+
+#wrapper > div > :nth-child(1){
+    margin-top: 25px;
 }
 
 #container {

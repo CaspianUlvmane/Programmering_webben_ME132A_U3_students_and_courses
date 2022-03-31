@@ -9,7 +9,7 @@
     --CRBG: salmon;
     --TC: black;
     --DC: lightgreen;
-    --MC: rgba(23, 25, 29, 0);
+    --MC: teal;
 }
 
 body{
@@ -42,7 +42,10 @@ body{
     height: 55px;
     background-color: var(--MC);
     position: absolute;
-    left: 23px;
+    transition-property: left;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    left: 61px;
     top: -2px;
 }
 
@@ -59,16 +62,16 @@ body{
     filter: drop-shadow(5px 5px 3px var(--DS));
 }
 
-#course > :nth-child(1){
-    margin-top: 25px;
-}
-
 form {
     background-color: var(--BG);
     padding: 6px;
     border-radius: 6px;
     border: solid var(--BC) 2px;
     font-size: larger;
+}
+
+#wrapper > div > :nth-child(1){
+    margin-top: 25px;
 }
 
 #container {

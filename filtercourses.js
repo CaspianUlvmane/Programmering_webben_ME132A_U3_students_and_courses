@@ -48,7 +48,10 @@ document.getElementById("styling").addEventListener("click", toggle)
 
 function setTheme(){
     let Theme = localStorage.getItem("theme")
-    console.log(Theme)
+    if (Theme == null){
+        document.querySelector("head > link").href = "style.css"
+        return
+    } 
     document.querySelector("head > link").href = Theme
     return Theme
 }
