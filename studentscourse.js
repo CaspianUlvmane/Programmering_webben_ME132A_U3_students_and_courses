@@ -1,7 +1,8 @@
+
 function allCourseStudents (id){
+    let studentsDiv = []
     let courseId = DATABASE.courses[id].courseId
     let students = allStudents.filter((student) => student.courses.some((course) => course.courseId == courseId))
-    let studentsDiv = []
         for (let student of students){
             let courseById = student.courses.filter((course) => course.courseId == courseId)
             for (let i = 0; i < courseById.length; i++){
@@ -23,4 +24,14 @@ function allCourseStudents (id){
             }
         }
     return studentsDiv.toString().split(",").join(" ");
+}
+
+function passedCredits (takenCourse, student){
+    let passedCredit = student.courses.filter((course) => course.courseId == takenCourse.courseId).map((course) => course.passedCredits)
+    return passedCredit
+}
+
+function courseStarted (takenCourse, student){
+    let courseStart = student.courses.filter((course) => course.courseId == takenCourse.courseId).map((course) => `${course.started.semester} ${course.started.year}`)
+    return courseStart
 }
