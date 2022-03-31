@@ -60,3 +60,30 @@ function toggle(){
 }
 
 document.getElementById("styling").addEventListener("click", toggle)
+
+function toggle(){
+    let darkmode = document.querySelector("head > link")
+
+    if (darkmode.getAttribute("href") == "style.css"){
+        darkmode.href = "dark.css"
+        localStorage.setItem("theme", 'dark.css')
+        return
+    }
+
+    if (darkmode.getAttribute("href") == "dark.css"){
+    darkmode.href = 'style.css'
+    localStorage.setItem("theme",  'style.css')
+    } 
+
+}
+
+document.getElementById("styling").addEventListener("click", toggle)
+
+function setTheme(){
+    let Theme = localStorage.getItem("theme")
+    console.log(Theme)
+    document.querySelector("head > link").href = Theme
+    return Theme
+}
+
+setTheme()

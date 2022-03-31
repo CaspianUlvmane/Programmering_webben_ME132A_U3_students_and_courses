@@ -8,6 +8,7 @@ function filterCourses (){
             resultArray.push(allCourses[i]);
         } 
     }
+    
     resultArray.sort((a, b) => {
         if (a.title > b.title){
             return 1
@@ -28,13 +29,15 @@ function searchWord (){
 document.getElementById("results").addEventListener("keyup", filterCourses)
 
 function toggle(){
-    let darkmode = document.querySelector("#siteWrapper")
+    let darkmode = document.querySelector("head > link")
 
-    if (window.getComputedStyle(darkmode).backgroundColor == "rgb(0, 128, 128)"){
+    if (darkmode.getAttribute("href") == "style.css"){
         darkmode.href = "dark.css"
         localStorage.setItem("theme", 'dark.css')
+        return
     }
-    if (window.getComputedStyle(darkmode).backgroundColor == "rgb(23, 25, 29)"){
+
+    if (darkmode.getAttribute("href") == "dark.css"){
     darkmode.href = 'style.css'
     localStorage.setItem("theme",  'style.css')
     } 
@@ -44,9 +47,10 @@ function toggle(){
 document.getElementById("styling").addEventListener("click", toggle)
 
 function setTheme(){
-    let darkmode = document.querySelector("#style")
     let Theme = localStorage.getItem("theme")
-    darkmode.href == Theme
+    console.log(Theme)
+    document.querySelector("head > link").href = Theme
+    return Theme
 }
 
 setTheme()
