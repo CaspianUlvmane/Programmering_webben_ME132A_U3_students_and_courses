@@ -1,3 +1,7 @@
+"use strict"
+
+// link to repository: https://github.com/CaspianUlvmane/Programmering_webben_ME132A_U3_students_and_courses
+
 function studentLastname (){
     let studentsArray = []
     for ( let i = 0; i < allStudents.length; i++){

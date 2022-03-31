@@ -1,8 +1,10 @@
+"use strict"
+
+// link to repository: https://github.com/CaspianUlvmane/Programmering_webben_ME132A_U3_students_and_courses
+
 let allCourses = DATABASE.courses
 let allTeachers = DATABASE.teachers
 let allStudents = DATABASE.students
-
-let twoCourses = [allCourses[0], allCourses[1]]
 
 function renderCourse(id){
     let div = document.createElement("div")
