@@ -1,11 +1,22 @@
 let allStudents = DATABASE.students
 
-function renderStudent(id){
+function renderStudentName(id){
     let div = document.createElement("div")
     let student = DATABASE.students[id]
     div.id = "container"
+    div.classList.add(student.studentID)
     div.innerHTML =
-    `<header>${student.firstName} ${student.lastName} (total: ${completeCredits(student)} credits)</header>
+    `<header>${student.firstName} ${student.lastName} (total: ${completeCredits(student)} credits)</header>`
+    return div
+}
+
+function renderStudent(id){
+    let div = document.createElement("div")
+    let student = DATABASE.students[id]
+    let nameElement = document.getElementsByClassName(student.studentID)[0]
+    div.id = "container"
+    div.innerHTML =
+    `
     <div>
         <div id="course">
             <h3>Courses:</h3>
@@ -14,6 +25,7 @@ function renderStudent(id){
             </div>
         </div>
     </div>`
+    nameElement.appendChild(div)
     return div
 }
 
@@ -32,7 +44,8 @@ function completeCredits (student){
 function renderStudents (students){
     let studentsElement = document.getElementById("students")
     for ( let student of students){
-        let studentElement = renderStudent(student.studentID)
+        let studentElement = renderStudentName(student.studentID)
+        studentElement.addEventListener("click", function(){renderStudent(student.studentID)})
         studentsElement.appendChild(studentElement)
     }
 }
