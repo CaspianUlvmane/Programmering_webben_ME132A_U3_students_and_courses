@@ -75,10 +75,7 @@ function allCourseTeachers (id) {
     }
   }
 
-  return teachers
-    .toString()
-    .split(',')
-    .join(' ')
+  return teachers.join(' ')
 }
 
 //renders all students that have taken a course
@@ -98,19 +95,15 @@ function allCourseStudents (id) {
         passedCredits(courseById[i], student)[i] ==
         DATABASE.courses[id].totalCredits
       ) {
-        let div = document.createElement('div')
-        let content = (div.innerHTML = `<div class="done">
+        studentsDiv.push(`<div class="done">
                     <p>${student.firstName} ${student.lastName} (${passedCredits(courseById[i], student)[i]} credits)</p>
                     <h5>${courseStarted(courseById[i], student)[i]}</h5>
                     </div>`)
-        studentsDiv.push(content)
       } else {
-        let div = document.createElement('div')
-        let content = (div.innerHTML = `<div>
+        studentsDiv.push(`<div>
                     <p>${student.firstName} ${student.lastName} (${passedCredits(courseById[i], student)[i]} credits)</p>
                     <h5>${courseStarted(courseById[i], student)[i]}</h5>
                     </div>`)
-        studentsDiv.push(content)
       }
     }
   }

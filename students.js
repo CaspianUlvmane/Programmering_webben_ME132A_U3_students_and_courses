@@ -58,17 +58,15 @@ function renderCourses (student) {
 
     //Om personen har avklarat alla poäng i en kurs får kursen klassen "done"
     if (student_course.passedCredits == courseDataId.totalCredits) {
-      let text = (div.innerHTML = `<div class="done"><h4>${courses[i].title}</h4>
+     
+      courseDiv.push(`<div class="done"><h4>${courses[i].title}</h4>
             <p>${student_course.started.semester} ${student_course.started.year} (${student_course.passedCredits} 0f ${courseDataId.totalCredits} credits)</p></div>`)
-      courseDiv.push(text)
     } else {
-      let text = (div.innerHTML = `<div><h4>${courses[i].title}</h4>
+
+      courseDiv.push(`<div><h4>${courses[i].title}</h4>
             <p>${student_course.started.semester} ${student_course.started.year} (${student_course.passedCredits} 0f ${courseDataId.totalCredits} credits)</p></div>`)
-      courseDiv.push(text)
     }
   }
   return courseDiv
-    .toString()
-    .split(',')
     .join(' ')
 }
