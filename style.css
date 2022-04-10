@@ -84,7 +84,15 @@ form {
     display: none;
 }
 
+#container > h3 {
+    display: none;
+}
+
 #container.active > div{
+    display: flex;
+}
+
+#container.active > h3 {
     display: block;
 }
 
@@ -177,6 +185,25 @@ p {
     padding: 10px;
     border-radius: 6px;
     border: solid var(--CBC) 2px;
+}
+
+#courseStudents {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#courseStudents > div {
+    flex-shrink: 1;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+}
+
+#courseStudents > .done {
+    background-color: var(--DC);
 }
 
 #courses > .done {

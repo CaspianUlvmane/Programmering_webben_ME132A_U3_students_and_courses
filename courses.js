@@ -9,7 +9,7 @@ let allStudents = DATABASE.students
 function renderCourse (id) {
   let div = document.createElement('div')
   div.id = 'container'
-  div.innerHTML = ` <div id="course">
+  div.innerHTML = `
     <header>${courseTitle(id)} (${courseTotalCredits(id)} credits)</header>
     <div id="faculty">
         <div id="responsible">
@@ -24,9 +24,8 @@ function renderCourse (id) {
         </div>
     </div>
     <h3>Students:</h3>
-    <div id="students">
+    <div id="courseStudents">
         ${allCourseStudents(id)}
-    </div>
     </div>
     `
   return div
@@ -36,6 +35,8 @@ function renderAllCourses (courses) {
   let coursesElement = document.getElementById('course')
   for (let course of courses) {
     let courseElement = renderCourse(course.courseId)
+    console.log(courseElement)
+    courseElement.addEventListener("click", function(){courseElement.classList.toggle("active")}) 
     coursesElement.appendChild(courseElement)
   }
 }

@@ -60,6 +60,7 @@ body{
 #form_contain {
     display: flex;
     filter: drop-shadow(5px 5px 3px var(--DS));
+    margin-bottom: 25px;
 }
 
 form {
@@ -70,10 +71,6 @@ form {
     font-size: larger;
 }
 
-#wrapper > div > :nth-child(1){
-    margin-top: 25px;
-}
-
 #container {
     margin-top: 15px;
     padding: 6px;
@@ -81,6 +78,22 @@ form {
     border: solid var(--BC) 2px;
     background-color: var(--BG);
     filter: drop-shadow(5px 5px 3px var(--DS));
+}
+
+#container > div {
+    display: none;
+}
+
+#container > h3 {
+    display: none;
+}
+
+#container.active > div{
+    display: flex;
+}
+
+#container.active > h3 {
+    display: block;
 }
 
 header {
@@ -172,6 +185,26 @@ p {
     border-radius: 6px;
     border: solid var(--CBC) 2px;
 }
+
+#courseStudents {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#courseStudents > div {
+    flex-shrink: 1;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: var(--CBG);
+    padding: 10px;
+    border-radius: 6px;
+    border: solid var(--CBC) 2px;
+}
+
+#courseStudents > .done {
+    background-color: var(--DC);
+}
+
 
 #courses > .done {
     background-color: var(--DC);
