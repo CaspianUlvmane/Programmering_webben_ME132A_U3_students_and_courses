@@ -108,8 +108,6 @@ function allCourseStudents (id) {
     }
   }
   return studentsDiv
-    .toString()
-    .split(',')
     .join(' ')
 }
 

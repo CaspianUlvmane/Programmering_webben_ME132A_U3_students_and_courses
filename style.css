@@ -60,6 +60,7 @@ body{
 #form_contain {
     display: flex;
     filter: drop-shadow(5px 5px 3px var(--DS));
+    margin-bottom: 25px;
 }
 
 form {
@@ -70,10 +71,6 @@ form {
     font-size: larger;
 }
 
-#wrapper > div > :nth-child(1){
-    margin-top: 25px;
-}
-
 #container {
     margin-top: 15px;
     padding: 6px;
@@ -81,6 +78,14 @@ form {
     border: solid var(--BC) 2px;
     background-color: var(--BG);
     filter: drop-shadow(5px 5px 3px var(--DS));
+}
+
+#container > div {
+    display: none;
+}
+
+#container.active > div{
+    display: block;
 }
 
 header {
@@ -161,6 +166,7 @@ p {
 #students {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 #students > div {

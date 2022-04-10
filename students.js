@@ -38,6 +38,7 @@ function renderStudents (students) {
   let studentsElement = document.getElementById('students')
   for (let student of students) {
     let studentElement = renderStudent(student.studentID)
+    studentElement.addEventListener("click", function(){studentElement.classList.toggle("active")}) 
     studentsElement.appendChild(studentElement)
   }
 }
@@ -52,7 +53,6 @@ function renderCourses (student) {
   }
   let courseDiv = []
   for (let i = 0; i < courses.length; i++) {
-    let div = document.createElement('div')
     let student_course = student.courses[i]
     let courseDataId = courseData[courses[i].courseId]
 
